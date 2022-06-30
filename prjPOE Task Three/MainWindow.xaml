@@ -1,0 +1,88 @@
+﻿<Window x:Class="prjPOE_Task_Three.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:prjPOE_Task_Three"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Add Expenses">
+                <Grid Background="#FFA9CAFF">
+                    <Label Content="Gross Income:" HorizontalAlignment="Left" Height="29" Margin="25,36,0,0" VerticalAlignment="Top" Width="117" FontSize="13"/>
+                    <Label Content="Tax Deducted:" HorizontalAlignment="Left" Height="24" Margin="25,70,0,0" VerticalAlignment="Top" Width="90" FontSize="13"/>
+                    <Label Content="Monthly Expenditures" HorizontalAlignment="Left" Height="36" Margin="25,104,0,0" VerticalAlignment="Top" Width="164" FontWeight="Bold" FontSize="13"/>
+                    <Label Content="Groceries:" HorizontalAlignment="Left" Height="24" Margin="28,140,0,0" VerticalAlignment="Top" Width="69" FontSize="13"/>
+                    <Label Content="Water and lights:" HorizontalAlignment="Left" Height="26" Margin="28,166,0,0" VerticalAlignment="Top" Width="110" FontSize="13"/>
+                    <Label Content="Travel costs(including petrol):" HorizontalAlignment="Left" Margin="25,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="-4.222,-0.291" FontSize="13"/>
+                    <Label Content="Cellphone and telephone:" HorizontalAlignment="Left" Margin="25,225,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <Label Content="Other expenses:" HorizontalAlignment="Left" Margin="25,256,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.121,0.296" FontSize="13"/>
+                    <TextBox x:Name="txtGrossIncome" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="210,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtTaxDeducted" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="210,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtGroceries" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="210,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtWaterAndLights" PreviewTextInput="NumberValidationTextBox"  HorizontalAlignment="Left" Margin="210,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtTravelCost" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="210,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtCellphoneAndTelephone" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="210,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="txtOtherExpeneses" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="210,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnAddExpenses" PreviewTextInput="NumberValidationTextBox" Content="Add Expenses" HorizontalAlignment="Left" Margin="210,296,0,0" VerticalAlignment="Top" Height="29" Width="120" Click="btnAddExpenses_Click" FontWeight="Bold" Background="#FF109CFF" Foreground="White" FontSize="13"/>
+                    <Label Content="Available money after expenses deductions:" HorizontalAlignment="Left" Margin="486,37,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.621,6.806" FontWeight="Bold" FontSize="13"/>
+                    <TextBox x:Name="txtAvailableMoneyAfterExpenses" HorizontalAlignment="Left" Margin="486,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="269" RenderTransformOrigin="0.104,0.439" Height="18"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Renting Accomodation">
+                <Grid Background="#FFA9CAFF">
+                    <Label Content="Monthly rental amount:" HorizontalAlignment="Left" Margin="10,28,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtMonthlyRentalAmount" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="173,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnAddMonthlyRental" Content="Add monthly rental amount" HorizontalAlignment="Left" Margin="173,86,0,0" VerticalAlignment="Top" Click="btnAddMonthlyRental_Click" FontWeight="Bold" Background="#FF109CFF" Foreground="White" FontSize="13" Height="23" Width="183"/>
+                    <ListBox x:Name="lstRental" Margin="469,32,28,139"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Home Loan">
+                <Grid Background="#FFA9CAFF">
+                    <Label Content="Property purchase price:" HorizontalAlignment="Left" Margin="30,36,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtPropertyPrice" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="211,44,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Total deposit:" HorizontalAlignment="Left" Margin="30,83,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtPropertyDeposit" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="211,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Interest rate(percentage):" HorizontalAlignment="Left" Margin="33,124,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtPropertyInterestRate" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="212,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Number of months:" HorizontalAlignment="Left" Margin="32,161,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtNumberOfMonths" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="211,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="btnMonthlyHomeLoanRepayment" Content="Calculate Home Loan Installment" HorizontalAlignment="Left" Margin="185,251,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="btnMonthlyHomeLoanRepayment_Click" Background="#FF109CFF" Foreground="White" FontSize="13" RenderTransformOrigin="0.44,-0.008" Height="27" Width="212"/>
+                    <ListBox x:Name="lstHomeLoan" Margin="469,32,28,139"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Buying Vehicle">
+                <Grid Background="#FFA9CAFF">
+                    <Label Content="Model and make:" HorizontalAlignment="Left" Margin="30,29,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtModelAndMake" HorizontalAlignment="Left" Margin="222,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Car purchase price:" HorizontalAlignment="Left" Margin="30,83,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtCarPrice" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="222,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Total Deposit" HorizontalAlignment="Left" Margin="30,128,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.44,0.469" FontSize="13"/>
+                    <TextBox x:Name="txtCarDeposit" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="222,132,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Car interest rate(percentage):" HorizontalAlignment="Left" Margin="30,185,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtCarInterestRate" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="222,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Estimated insurance premium:" HorizontalAlignment="Left" Margin="30,236,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtEstimatedInsurancePremium" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="222,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label x:Name="___No_Name_" Content="Total expenses:" HorizontalAlignment="Left" Margin="30,284,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <RadioButton x:Name="rbnRentAccomodation" Content="Rent Accomodation" HorizontalAlignment="Left" Margin="229,285,0,0" VerticalAlignment="Top" GroupName="CalculatingTotalExpenses" FontSize="13"/>
+                    <RadioButton x:Name="rbnHomeLoan" Content="Home loan" HorizontalAlignment="Left" Margin="229,305,0,0" VerticalAlignment="Top" GroupName="CalculatingTotalExpenses" FontSize="13"/>
+                    <Button x:Name="btnCalculateTotalMonthlyCost" Content="Calculate Car Installment" HorizontalAlignment="Left" Margin="222,346,0,0" VerticalAlignment="Top" Width="175" FontWeight="Bold" Click="btnCalculateTotalMonthlyCost_Click" Background="#FF109CFF" Foreground="White" FontSize="13" Height="32"/>
+                    <ListBox x:Name="lstVehicle" Margin="469,32,28,139"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Save Money">
+                <Grid Background="#FFA9CAFF">
+                    <Label Content="Goal amount:" HorizontalAlignment="Left" Margin="33,28,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtSavePrice" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="135,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Interest rate:" HorizontalAlignment="Left" Margin="33,79,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtSaveInterestRate" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="135,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Label Content="Years to save:" HorizontalAlignment="Left" Margin="33,120,0,0" VerticalAlignment="Top" FontSize="13"/>
+                    <TextBox x:Name="txtSavePeriodOfTime" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Margin="135,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <ListBox x:Name="lstSaveMoney" Margin="469,32,28,139"/>
+                    <Button x:Name="btnCalculateMonthlySaving" Content="Calculate Monthly Saving" HorizontalAlignment="Left" Margin="135,188,0,0" VerticalAlignment="Top" Click="btnCalculateMonthlySaving_Click_1" FontWeight="Bold" Background="#FF109CFF" Foreground="White" Height="27" Width="166"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
